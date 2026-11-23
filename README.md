@@ -13,7 +13,7 @@ PyTorch -> linalg -> Stream -> Calyx -> Verilog
 The `affine` and `scf` stages are **not** part of this design.  They belong to
 the standard `scf-to-calyx` route that this dialect expect to replace.
 
-This repository currently implements **Stream -> Calyx -> Verilog**.  The
+This repository currently implements `Stream -> Calyx -> Verilog`.  The
 `PyTorch -> linalg -> Stream` frontend is not in this tree yet.
 
 The project is experimental.  It is not a complete CNN compiler yet; there is
@@ -32,7 +32,6 @@ lib/Support/                     CalyxBuilder implementation
 lib/Conversion/StreamToCalyx/    Stream-to-Calyx lowerings
 
 stream-opt/                      optimizer driver
-stream-plugin/                   optional circt-opt plugin
 test/                            lit/FileCheck regression tests
 ```
 
@@ -164,7 +163,7 @@ stream.gemm_tile %a, %b, %c {k = 4, zero_init = false}
 
 ### Whole GEMM
 
-The legacy op remains as a reference:
+This op remains as a reference for benchmark:
 
 ```mlir
 stream.gemm %a, %b, %c {
